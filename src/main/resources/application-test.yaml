@@ -1,0 +1,42 @@
+type: 5
+bootstrap-server: 10.144.175.14:6667,10.144.175.129:6667,10.144.175.165:6667
+sourceAlias: adongruantest
+group: test_lg
+topics: MQ_HSS_DTO,MQ_MBS_DTO,MQ_HSS_STR,MQ_IVC_DTO-clct310,MQ_BIC_PSNSYNCFAILRCD_PROV,MQ_MBS_SMC_MSG_PUSH,MQ_USC_NATION_DEV_DTO
+source-bootstrap-server: 10.144.175.14:6667,10.144.175.129:6667,10.144.175.165:6667
+
+#produce,test
+area: test
+#dongruan,yinhai,chuangzhi
+isv: dongruan
+config:
+  test:
+    dongruan:
+      GID_PLC_SPS_TCP_CZ: MQ_PLC_SPS_SAVE_SERVITEM_STR,MQ_BIS_CALLBACK_3,MQ_PLC_SPS_SAVE_EXCEPTION_STR
+      GID_BIS_PRD: MQ_HSA_CZHY_DEMO_STR-test-01,MQ_BIS_TRAN
+      tps_local: WRITE_TASK_TOPIC,MQ_BIS_CALLBACK_4
+      GID_SMC_PMS_TCP_CZ: MQ_SMC_PMS_SAVE_CALC
+      GID_PLC_PMS_TCP_CZ: MQ_PLC_PMS_SAVE_POLICY
+      tps_trade: MQ_BLKS_PROD_DTO_,HSA_TENDER_PUBOLON_ADJM
+      tps_tender: MQ_TPC_DTO
+      test_lg: MQ_HSS_DTO,MQ_MBS_DTO,MQ_HSS_STR,MQ_IVC_DTO-clct310,MQ_BIC_PSNSYNCFAILRCD_PROV,MQ_MBS_SMC_MSG_PUSH,MQ_USC_NATION_DEV_DTO
+    yinhai:
+      testGroup: test11,test12
+
+  produce:
+    dongruan:
+      GID_PLC_PMS_TCP_CZ: MQ_PLC_PMS_SAVE_POLICY
+      GID_BIS_PRD: MQ_HSA_CZHY_DEMO_STR-test-01,MQ_BIS_TRAN
+      GID_SMC_PMS_TCP_CZ: MQ_SMC_PMS_SAVE_CALC
+      tps_tender: MQ_TPC_DTO
+      tps_trade: MQ_BLKS_PROD_DTO_,HSA_TENDER_PUBOLON_ADJM
+      test_lg: MQ_HSS_STR,MQ_IVC_DTO-clct310,MQ_HSS_DTO,MQ_BIC_PSNSYNCFAILRCD_PROV,MQ_MBS_DTO,MQ_USC_NATION_DEV_DTO
+      tps_local: WRITE_TASK_TOPIC,MQ_BIS_CALLBACK_4
+      GID_PLC_SPS_TCP_CZ: MQ_BIS_CALLBACK_3,MQ_PLC_SPS_SAVE_EXCEPTION_STR
+
+    yinhai:
+      testGroup: mq_cts_bas_interface_prd,mq_cts_bas_str_prd
+
+    chuangzhi:
+      test_lg: MQ_SMC_PMS_SAVE_CALC
+      GID_HSA_SPS_TCP_CZ: mq_sps_save_upload_data_str_prd
